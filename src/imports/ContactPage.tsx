@@ -62,10 +62,8 @@ export default function ContactPage() {
 
   return (
     <div className="bg-[#f7f3eb] w-full min-h-screen overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50">
-        <Navbar />
-      </div>
-      <div className="flex flex-col w-full pt-[80px]">
+      <Navbar />
+      <div className="pt-[80px]">
         {/* Main Content */}
         <main className="contact-main-content">
           <h1 className="contact-title">Contact Us</h1>

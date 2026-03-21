@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, animate, useInView, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from 'lucide-react';
+import { useNavigate } from "react-router";
 import svgPaths from "./svg-paths";
 import logo from "../assets/logo.png";
 import imgRectangle9 from "../assets/e54e08242e5e8cea29c382ba6bc82218d425f28e.png";
@@ -8,6 +9,8 @@ import imgImage9 from "../assets/3aab4451afd875f66a83eb26e0ca2d6f58abce98.png";
 import imgImage7 from "../assets/e985b07ea1f916546c05a06ca93558ef62ecc870.png";
 import imgImage13 from "../assets/a440209918fa81a1c528e2e95290d4f1f12546e7.png";
 import DotMap from "../components/DotMap";
+import Navbar from "../app/components/Navbar";
+import SharedFooter from "./SharedFooter";
 
 function Counter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -290,148 +293,14 @@ function SliderImageThree() {
   );
 }
 
-function LogoContainer() {
-  return (
-    <div className="flex items-center justify-center relative shrink-0">
-      <img
-        src={logo}
-        alt="Ateion Logo"
-        className="h-[60px] object-contain w-auto"
-      />
-    </div>
-  );
-}
-
-function Logo() {
-  return (
-    <div className="flex items-center justify-center relative shrink-0">
-      <img 
-        src={logo} 
-        alt="Ateion Logo" 
-        className="h-[60px] object-contain w-auto transform transition-transform hover:scale-105"
-      />
-    </div>
-  );
-}
 
 
-// Frame8 and Frame7 merged into Frame9
 
-function Frame9() {
-  const navigate = useNavigate();
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => navigate('/')}
-      className="bg-[rgba(235,235,235,0.8)] flex h-[34px] items-center justify-center px-[22px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[rgba(215,215,215,0.95)] transition-colors"
-    >
-      <p className="font-bold leading-none relative shrink-0 text-[#292929] text-[13px] whitespace-nowrap pt-[1px]" style={{ fontFamily: "'Manrope', sans-serif" }}>About Us</p>
-    </motion.div>
-  );
-}
 
-function Frame3() {
-  const navigate = useNavigate();
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => navigate('/')}
-      className="bg-[rgba(235,235,235,0.8)] flex gap-[6px] h-[34px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[rgba(215,215,215,0.95)] transition-colors"
-    >
-      <p className="font-bold leading-none relative shrink-0 text-[#292929] text-[13px] whitespace-nowrap pt-[1px]" style={{ fontFamily: "'Manrope', sans-serif" }}>Workshops</p>
-      <div className="flex items-center justify-center relative shrink-0 opacity-80 group-hover:translate-y-0.5 transition-transform">
-        <div className="flex-none rotate-180">
-          <div className="relative size-[8px]">
-            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 8.06516 7.25">
-              <path d={svgPaths.p3367e500} fill="#292929" id="Polygon 1" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
-
-import { useNavigate } from "react-router";
-
-function Frame5() {
-  const navigate = useNavigate();
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => navigate('/gco')}
-      className="bg-[rgba(227,227,227,0.72)] content-stretch flex h-[32px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[rgba(200,200,200,0.85)] transition-colors"
-    >
-      <p className="font-bold leading-none relative shrink-0 text-[#292929] text-[13px] whitespace-nowrap" style={{ fontFamily: "'Manrope', sans-serif" }}>Global Olympiad</p>
-    </motion.div>
-  );
-}
-
-function Frame6() {
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="bg-[rgba(227,227,227,0.72)] content-stretch flex h-[32px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[rgba(200,200,200,0.85)] transition-colors"
-    >
-      <p className="font-bold leading-none relative shrink-0 text-[#292929] text-[13px] whitespace-nowrap" style={{ fontFamily: "'Manrope', sans-serif" }}>Resources</p>
-    </motion.div>
-  );
-}
-
-function NavLinks() {
-  return (
-    <div className="content-stretch flex gap-[16px] items-center relative shrink-0">
-      <Frame9 />
-      <Frame3 />
-      <Frame5 />
-      <Frame6 />
-    </div>
-  );
-}
-
-// Frame1 merged into NavActions
-
-function NavActions() {
-  const navigate = useNavigate();
-  return (
-    <motion.div
-      whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(251, 68, 68, 0.3)" }}
-      whileTap={{ scale: 0.95 }}
-      onClick={() => navigate('/contact')}
-      className="bg-[#fb4444] content-stretch flex h-[36px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[#ff5555] transition-all"
-      style={{ pointerEvents: 'auto' }}
-    >
-      <p className="font-bold leading-none relative shrink-0 text-[13px] text-white whitespace-nowrap" style={{ fontFamily: "'Manrope', sans-serif" }}>Get Connected</p>
-    </motion.div>
-  );
-}
-
-function TopNavBar() {
-  return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-transparent">
-      <div className="content-stretch flex items-center justify-between px-[24px] py-[20px] relative shrink-0 w-full max-w-[1280px] mx-auto">
-        <div className="flex flex-1 items-center justify-start">
-          <LogoContainer />
-        </div>
-        <div className="flex-[2] flex items-center justify-center">
-          <NavLinks />
-        </div>
-        <div className="flex flex-1 items-center justify-end">
-          <NavActions />
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function HeroSliderHeader() {
   return (
     <div className="h-[665px] relative shrink-0 w-full overflow-hidden">
-      <TopNavBar />
       <div className="flex flex-col gap-[16px] items-start w-full">
         <HeroSliderImages />
       </div>
@@ -676,7 +545,7 @@ function GlobalPresenceMapContainer() {
   return (
     <div className="content-stretch flex flex-col gap-[64px] items-center relative shrink-0 w-full">
       <GlobalPresenceTitleWrapper />
-      <div className="aspect-[1280/500] relative shrink-0 w-full bg-[#050505] overflow-hidden">
+      <div className="aspect-[1280/500] relative shrink-0 w-full bg-black overflow-hidden">
         <div className="absolute inset-0 scale-[0.95] origin-center flex items-center justify-center">
           <DotMap />
         </div>
@@ -1022,7 +891,7 @@ function EcosystemCluster() {
         </defs>
       </svg>
 
-      {/* Curved Arrows — all ml values shifted left by 223px from original Figma */}
+      {/* Curved Arrows â€” all ml values shifted left by 223px from original Figma */}
       <div className="col-1 h-[336.118px] ml-[259.28px] mt-[79.07px] relative row-1 w-[212.218px]">
         <div className="absolute inset-[0_0_-0.13%_-0.19%] pointer-events-none opacity-20">
           <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 212.806 336.735">
@@ -1255,179 +1124,25 @@ function MainContentWrapper() {
   );
 }
 
-function FooterLogoPlaceholder() {
-  return <div className="h-[84.45px] overflow-clip shrink-0 w-[143.844px]" />;
-}
-
-function FooterBrandName() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <p className="font-['Lato:Bold',sans-serif] font-bold leading-tight not-italic relative shrink-0 text-[18px] text-black">Ateion Pvt. Ltd.</p>
-    </div>
-  );
-}
-
-function FooterSocialLinks() {
-  return (
-    <div className="content-stretch flex gap-[22.273px] items-center relative shrink-0">
-      <div className="relative shrink-0 size-[22.273px]" data-name="react-icons/ri/RiLinkedinFill">
-        <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.2726 22.2726">
-          <g id="Group">
-            <g id="Vector" />
-            <path d={svgPaths.peb98800} fill="var(--fill-0, black)" fillOpacity="0.7" id="Vector_2" />
-          </g>
-        </svg>
-      </div>
-      <div className="relative shrink-0 size-[22.273px]" data-name="react-icons/si/SiWhatsapp">
-        <div className="absolute inset-[0_0.24%]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.1669 22.2727">
-            <path d={svgPaths.p7943900} fill="var(--fill-0, black)" fillOpacity="0.7" id="Vector" />
-          </svg>
-        </div>
-      </div>
-      <div className="relative shrink-0 size-[18.561px]" data-name="image 13">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage13} />
-      </div>
-      <div className="relative shrink-0 size-[22.273px]" data-name="react-icons/si/SiYoutube">
-        <div className="absolute inset-[14.77%_0]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.2726 15.6929">
-            <path d={svgPaths.p13c87470} fill="var(--fill-0, black)" fillOpacity="0.7" id="Vector" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FooterAteionBrand() {
-  return (
-    <div className="content-stretch flex flex-col gap-[37.121px] items-start relative shrink-0">
-      <FooterBrandName />
-      <FooterSocialLinks />
-    </div>
-  );
-}
-
-function FooterColumnLeft() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px relative" data-name="FooterColumnLeft">
-      <FooterAteionBrand />
-    </div>
-  );
-}
-
-function FooterAddress() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <p className="font-['Lato:Regular',sans-serif] h-[68.674px] leading-[1.3] not-italic relative shrink-0 text-[15.78px] text-[rgba(0,0,0,0.6)] w-[260.775px] whitespace-pre-wrap">{`PCMC , Pune , Maharashtra  - 500034`}</p>
-    </div>
-  );
-}
-
-function FooterPhone() {
-  return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <p className="font-['Lato:Regular',sans-serif] leading-[1.3] not-italic relative shrink-0 text-[15.78px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">+91 93569 76878</p>
-    </div>
-  );
-}
-
-function FooterEmail() {
-  return (
-    <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[13.78px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">destiny@ateion.com</p>
-    </div>
-  );
-}
-
-function FooterContactInfo() {
-  return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0">
-      <FooterAddress />
-      <FooterPhone />
-      <FooterEmail />
-    </div>
-  );
-}
-
-function FooterColumnMiddle() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px relative">
-      <FooterContactInfo />
-    </div>
-  );
-}
-
-function FooterLegalLinks() {
-  return (
-    <div className="content-stretch flex flex-col font-['Lato:Regular',sans-serif] gap-[14.848px] items-start leading-[normal] not-italic relative shrink-0 text-[14.85px] text-[rgba(0,0,0,0.6)] w-full">
-      <p className="relative shrink-0 w-full">Terms of Use</p>
-      <p className="relative shrink-0 w-full">Privacy Policy</p>
-      <p className="relative shrink-0 w-full">{`Data Collection & Consent`}</p>
-    </div>
-  );
-}
-
-function FooterColumnRight() {
-  return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px relative">
-      <FooterLegalLinks />
-    </div>
-  );
-}
-
-function FooterColumnsContainer() {
-  return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full max-w-[1240px] mx-auto px-[64px] gap-[64px]">
-      <FooterColumnLeft />
-      <FooterColumnMiddle />
-      <FooterColumnRight />
-    </div>
-  );
-}
-
-function FooterMainArea() {
-  return (
-    <div className="bg-[#f7f3eb] relative shrink-0 w-full py-[48px]">
-      <div className="content-stretch flex flex-col items-center justify-center relative size-full">
-        <FooterColumnsContainer />
-      </div>
-    </div>
-  );
-}
-
-function FooterCopyrightBar() {
-  return (
-    <div className="bg-[#1e1632] h-[64px] relative shrink-0 w-full flex items-center justify-center px-[32px]">
-      <div aria-hidden="true" className="absolute border-[#e4e4e4] border-solid border-t-[1px] inset-[0_0_auto_0] pointer-events-none opacity-20" />
-      <p className="font-['Lato:Regular',sans-serif] leading-normal not-italic relative shrink-0 text-[14px] text-center text-white opacity-80">
-        Copyright ©Ateion 2026. All Rights Reserved.
-      </p>
-    </div>
-  );
-}
-
-function FooterSection() {
-  return (
-    <div className="flex flex-col items-center w-full">
-      <FooterMainArea />
-      <FooterCopyrightBar />
-    </div>
-  );
-}
-
 function PageLayout() {
   return (
     <div className="flex flex-col w-full">
       <MainContentWrapper />
-      <FooterSection />
+      <SharedFooter />
     </div>
   );
 }
 export default function Homepage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-[#f7f3eb] w-full min-h-screen overflow-x-hidden" data-name="Homepage">
-      <PageLayout />
+      <Navbar />
+      <div className="pt-[80px]">
+        <PageLayout />
+      </div>
     </div>
   );
 }

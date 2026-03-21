@@ -62,7 +62,7 @@ function FooterColumnLeft() {
 function FooterAddress() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
-      <p className="font-['Lato:Regular',sans-serif] leading-[1.3] not-italic relative shrink-0 text-[15.78px] text-[rgba(0,0,0,0.6)] whitespace-pre-wrap">{`PCMC , Pune , Maharashtra  - 500034`}</p>
+      <p className="font-['Lato:Regular',sans-serif] leading-[1.3] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] whitespace-pre-wrap">{`PCMC , Pune , Maharashtra  - 500034`}</p>
     </div>
   );
 }
@@ -70,7 +70,7 @@ function FooterAddress() {
 function FooterPhone() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0">
-      <p className="font-['Lato:Regular',sans-serif] leading-[1.3] not-italic relative shrink-0 text-[15.78px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">+91 93569 76878</p>
+      <p className="font-['Lato:Regular',sans-serif] leading-[1.3] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">+91 93569 76878</p>
     </div>
   );
 }
@@ -78,7 +78,7 @@ function FooterPhone() {
 function FooterEmail() {
   return (
     <div className="content-stretch flex flex-col items-start justify-center relative shrink-0">
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[13.78px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">destiny@ateion.com</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] whitespace-nowrap">destiny@ateion.com</p>
     </div>
   );
 }
@@ -103,7 +103,7 @@ function FooterColumnMiddle() {
 
 function FooterLegalLinks() {
   return (
-    <div className="content-stretch flex flex-col font-['Lato:Regular',sans-serif] gap-[14.848px] items-start leading-[normal] not-italic relative shrink-0 text-[14.85px] text-[rgba(0,0,0,0.6)] w-full">
+    <div className="content-stretch flex flex-col font-['Lato:Regular',sans-serif] gap-[12px] items-start leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(0,0,0,0.6)] w-full">
       <p className="relative shrink-0 w-full cursor-pointer hover:text-black transition-colors">Terms of Use</p>
       <p className="relative shrink-0 w-full cursor-pointer hover:text-black transition-colors">Privacy Policy</p>
       <p className="relative shrink-0 w-full cursor-pointer hover:text-black transition-colors">{`Data Collection & Consent`}</p>
