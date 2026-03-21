@@ -103,7 +103,7 @@ function NavActions() {
 export default function Navbar() {
   const navigate = useNavigate();
   return (
-    <div className="bg-transparent">
+    <div>
       <div className="content-stretch flex items-center justify-between px-[24px] py-[20px] relative shrink-0 w-full max-w-[1280px] mx-auto">
         <div className="flex flex-1 items-center justify-start">
           <button className="cursor-pointer" onClick={() => navigate('/')} aria-label="Go to homepage">
