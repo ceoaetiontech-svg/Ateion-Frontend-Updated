@@ -94,6 +94,7 @@ function NavActions() {
       whileTap={{ scale: 0.95 }}
       onClick={() => navigate('/contact')}
       className="bg-[#fb4444] flex h-[36px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[#ff5555] transition-all"
+      style={{ pointerEvents: 'auto' }}
     >
       <p className="font-bold leading-none relative shrink-0 text-[13px] text-white whitespace-nowrap" style={{ fontFamily: "'Manrope', sans-serif" }}>Get Connected</p>
     </motion.div>
@@ -103,7 +104,7 @@ function NavActions() {
 export default function Navbar() {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="bg-transparent">
       <div className="content-stretch flex items-center justify-between px-[24px] py-[20px] relative shrink-0 w-full max-w-[1280px] mx-auto">
         <div className="flex flex-1 items-center justify-start">
           <button className="cursor-pointer" onClick={() => navigate('/')} aria-label="Go to homepage">

@@ -392,11 +392,14 @@ function NavLinks() {
 // Frame1 merged into NavActions
 
 function NavActions() {
+  const navigate = useNavigate();
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(251, 68, 68, 0.3)" }}
       whileTap={{ scale: 0.95 }}
+      onClick={() => navigate('/contact')}
       className="bg-[#fb4444] content-stretch flex h-[36px] items-center justify-center px-[20px] relative rounded-full shrink-0 group cursor-pointer hover:bg-[#ff5555] transition-all"
+      style={{ pointerEvents: 'auto' }}
     >
       <p className="font-bold leading-none relative shrink-0 text-[13px] text-white whitespace-nowrap" style={{ fontFamily: "'Manrope', sans-serif" }}>Get Connected</p>
     </motion.div>
@@ -405,7 +408,7 @@ function NavActions() {
 
 function TopNavBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 z-50">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="content-stretch flex items-center justify-between px-[24px] py-[20px] relative shrink-0 w-full max-w-[1280px] mx-auto">
         <div className="flex flex-1 items-center justify-start">
           <LogoContainer />
