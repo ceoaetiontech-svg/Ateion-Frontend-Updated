@@ -354,24 +354,21 @@ function HeroHeaderSection() {
 
 function PurpleCapabilityCardText() {
   return (
-    <div className="content-stretch flex flex-col gap-[133px] items-start not-italic relative shrink-0 text-black w-[232px]">
-      <p className="font-['Inter',sans-serif] leading-[0] min-w-full relative shrink-0 text-[0px] w-[min-content]">
-        <span className="leading-[normal] text-[24px]">{`Because `}</span>
-        <span className="font-['Inter',sans-serif] leading-[normal] text-[24px]">{`marks `}</span>
-        <span className="leading-[normal] text-[24px]">measure memory.</span>
-        <span className="font-['IBM Plex Sans',sans-serif] italic leading-[normal] text-[24px]">{` `}</span>
-        <span className="font-['Inter',sans-serif] leading-[normal] text-[32px]">Capability</span>
-        <span className="leading-[normal] text-[24px]">{` `}</span>
-        <span className="font-['IBM Plex Sans',sans-serif] italic leading-[normal] text-[24px]">measures the future.</span>
+    <div className="flex flex-col gap-[32px] items-start relative shrink-0 w-[249px]">
+      <p className="font-['Inter',sans-serif] leading-[1.4] text-[18px] text-black">
+        Because <strong>marks</strong> measure memory.<br/>
+        <strong className="font-['IBM Plex Sans',sans-serif] italic text-[20px]">Capability</strong> <strong className="font-['IBM Plex Sans',sans-serif] italic">measures the future.</strong>
       </p>
-      <p className="font-['Inter',sans-serif] leading-[normal] relative shrink-0 text-[20px] w-[190px] whitespace-pre-wrap">{`Ateion is the world's leading Capability-First Education ecosystem  integrating AI literacy, innovation, and measurable readiness into modern schooling.`}</p>
+      <p className="font-['Inter',sans-serif] leading-[1.6] text-[14px] text-black w-[220px]">
+        Ateion is the world's leading Capability-First Education ecosystem integrating AI literacy, innovation, and measurable readiness into modern schooling.
+      </p>
     </div>
   );
 }
 
 function PurpleCapabilityCardInner() {
   return (
-    <div className="bg-[#dadada] content-stretch flex h-[504px] items-start pb-[31px] pl-[17px] pt-[18px] relative rounded-[15px] shrink-0 w-[249px]">
+    <div className="bg-[#f0f0f0] flex h-[504px] items-start p-[32px] relative rounded-tr-[13px] rounded-br-[13px] shrink-0 w-[249px]">
       <PurpleCapabilityCardText />
     </div>
   );
