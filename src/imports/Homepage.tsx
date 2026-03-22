@@ -364,7 +364,7 @@ function PurpleCapabilityCardText() {
         <span className="leading-[normal] text-[24px]">{` `}</span>
         <span className="font-['IBM_Plex_Sans:Bold_Italic',sans-serif] italic leading-[normal] text-[24px]">measures the future.</span>
       </p>
-      <p className="font-['SF_Pro_Display:Regular',sans-serif] leading-[normal] relative shrink-0 text-[20px] w-[190px] whitespace-pre-wrap">{`Ateion is the world’s leading Capability-First Education ecosystem  integrating AI literacy, innovation, and measurable readiness into modern schooling.`}</p>
+      <p className="font-['SF_Pro_Display:Regular',sans-serif] leading-[normal] relative shrink-0 text-[20px] w-[190px] whitespace-pre-wrap">{`Ateion is the world's leading Capability-First Education ecosystem  integrating AI literacy, innovation, and measurable readiness into modern schooling.`}</p>
     </div>
   );
 }
@@ -379,8 +379,8 @@ function PurpleCapabilityCardInner() {
 
 function PurpleCapabilityCardOuter() {
   return (
-    <div className="flex items-center justify-center relative shrink-0 w-full">
-      <div className="content-stretch flex items-center relative shrink-0 w-[1224px]">
+    <div className="flex items-start justify-start relative shrink-0 w-full">
+      <div className="content-stretch flex items-center relative shrink-0 w-[1224px] pl-[64px]">
         <div className="bg-[#aa9dff] h-[504px] rounded-bl-[13px] rounded-tl-[13px] shrink-0 flex-1" />
         <PurpleCapabilityCardInner />
       </div>
@@ -457,8 +457,8 @@ function RedIntelligenceCard() {
 
 function HeroMetricsRow() {
   return (
-    <div className="flex items-center justify-center relative shrink-0 w-full">
-      <div className="flex gap-[24px] items-center relative shrink-0 w-[1224px]">
+    <div className="flex items-start justify-start relative shrink-0 w-full">
+      <div className="flex gap-[24px] items-center relative shrink-0 w-[1224px] pl-[64px]">
         <GlobalAlignedBlackCard />
         <RedIntelligenceCard />
       </div>
@@ -494,7 +494,7 @@ function CounterPartnerInstitutions() {
       <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f3ecff] text-[54px]">
         <Counter value={200} suffix="+" />
       </p>
-      <p className="font-['Inter:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Partner Institutions</p>
+      <p className="font-['SF_Pro_Display:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Partner Institutions</p>
     </motion.div>
   );
 }
@@ -508,7 +508,7 @@ function CounterStudentsEmpowered() {
       <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f3ecff] text-[54px]">
         <Counter value={50000} suffix="+" />
       </p>
-      <p className="font-['Inter:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Students Empowered</p>
+      <p className="font-['SF_Pro_Display:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Students Empowered</p>
     </motion.div>
   );
 }
@@ -522,7 +522,7 @@ function CounterGlobalAlliances() {
       <p className="font-['DM_Sans:Bold',sans-serif] font-bold leading-none relative shrink-0 text-[#f3ecff] text-[54px]">
         <Counter value={193} suffix="+" />
       </p>
-      <p className="font-['Inter:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Global Alliances</p>
+      <p className="font-['SF_Pro_Display:Medium',sans-serif] leading-normal not-italic relative shrink-0 text-[#a78bfa] text-[18px] mt-[12px]">Global Alliances</p>
     </motion.div>
   );
 }

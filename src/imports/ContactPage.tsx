@@ -64,10 +64,10 @@ export default function ContactPage() {
     <>
       <SharedNavbar />
       <div className="bg-[#f7f3eb] w-full min-h-screen overflow-x-hidden relative">
-        <main className="pt-[160px] pb-[80px] px-[64px]">
+        <main className="pt-[160px] pb-[80px] px-[24px]">
           <div className="max-w-[1240px] mx-auto">
-            <h1 className="contact-title">Contact Us</h1>
-            <p className="contact-description">
+            <h1 className="contact-title text-center">Contact Us</h1>
+            <p className="contact-description text-center">
               The Global Capability Olympiad is the world's first preparation-free, syllabus-free,
               AI-integrated Master Olympiad designed to measure thinking, not memory.
             </p>
