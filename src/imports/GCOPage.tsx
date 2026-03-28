@@ -21,7 +21,7 @@ const GCOPage = () => {
     <>
       <SharedNavbar />
       <div id="gco-root" className="bg-[#f7f3eb] w-full min-h-screen overflow-x-hidden relative">
-        <main className="pt-[80px]">
+        <main className="mt-[80px] md:mt-[100px]">
           <HeroSection />
           <Slide />
           <GCOComparison />

@@ -37,7 +37,7 @@ function HeroSection() {
       </ImageTrail>
       <div className="overlay">
         <div className="hero-content">
-          <h1 className="hero-title mt-[80px] lg:mt-[100px]">
+          <h1 className="hero-title" style={{marginTop: "150px"}}>
             Global Capability Olympiad
           </h1>
           <p className="hero-subtitle">
