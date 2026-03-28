@@ -8,7 +8,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import svgPaths from "../../imports/svg-paths";
 import logo from "../../assets/logo.png";
 
@@ -54,11 +54,13 @@ function LogoContainer() {
 
   return (
     <div className="flex items-center relative shrink-0">
+      <Link to="/">
       <img
         src={logo}
         alt="Ateion Logo"
         className={`h-[50px] md:h-[60px] object-contain w-auto transition-all duration-300 ${isLogoWhite ? 'brightness-0 invert' : ''}`}
       />
+      </Link>
     </div>
   );
 }
