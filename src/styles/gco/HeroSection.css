@@ -34,6 +34,7 @@
   flex-direction: column;
   justify-content: center;
   padding-top: 0;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
 }
 
 .hero-title {
@@ -99,28 +100,43 @@
 }
 
 .aligned-with {
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
 }
 
 .aligned-title {
   font-family: 'SF Pro Display', sans-serif;
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   font-weight: 200;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
   color: #000;
 }
 
 .logos {
   display: flex;
   justify-content: center;
-  gap: 1.25rem;
+  gap: clamp(1rem, 2.5vw, 2rem);
   flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .logos img {
-  height: clamp(40px, 8vw, 70px);
+  height: auto;
+  width: min(100%, clamp(240px, 28vw, 380px));
   max-width: 100%;
   object-fit: contain;
+  filter: saturate(1.05) contrast(1.02);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.14),
+    0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.logos img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.18),
+    0 12px 24px rgba(0, 0, 0, 0.1);
+  filter: saturate(1.12) contrast(1.04);
 }
 
 /* ─── Mobile ≤600px ──────────────────────────── */
@@ -131,6 +147,7 @@
   }
   .hero-content {
     padding-top: 60px;
+    padding-bottom: 4rem;
   }
   .hero-buttons {
     flex-direction: column;
@@ -140,6 +157,12 @@
   .btn-black {
     width: 100%;
     max-width: 18rem;
+  }
+  .aligned-with {
+    margin-top: 3rem;
+  }
+  .logos img {
+    width: min(100%, 320px);
   }
 }
 

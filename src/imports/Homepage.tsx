@@ -434,7 +434,7 @@ function GlobalAlignedBlackCard() {
 
 function RedIntelligenceTitle() {
   return (
-    <div className="h-auto sm:h-[132px] relative shrink-0 w-full max-w-[235px]">
+    <div className="h-auto sm:h-[132px] relative shrink-0 w-full max-w-[235px] text-center">
       <p className="relative leading-[normal] not-italic text-[20px] sm:text-[24px] text-black w-full" style={{ fontFamily: "'OV Soge', sans-serif" }}>Education is not broken. Its measurement system is :</p>
     </div>
   );
@@ -442,7 +442,7 @@ function RedIntelligenceTitle() {
 
 function RedIntelligenceTop() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col sm:flex-row items-center justify-center gap-[16px] sm:gap-[24px] relative shrink-0 w-full">
       <RedIntelligenceTitle />
       <VerticalTicker />
     </div>
@@ -451,9 +451,9 @@ function RedIntelligenceTop() {
 
 function RedIntelligenceContent() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full max-w-[510px]">
+    <div className="content-stretch flex flex-col gap-[24px] sm:gap-[32px] items-center justify-center relative shrink-0 w-full max-w-[510px] mx-auto text-center">
       <RedIntelligenceTop />
-      <p className="font-['Inter',sans-serif] h-auto sm:h-[88px] leading-[0] not-italic relative shrink-0 text-[0px] text-black w-full flex-1 mt-4 sm:mt-0">
+      <p className="font-['Inter',sans-serif] h-auto sm:h-[88px] leading-[0] not-italic relative shrink-0 text-[0px] text-black w-full mt-2 sm:mt-0 text-center">
         <span className="leading-[28px] sm:leading-[32px] text-[18px] sm:text-[20px]">{`Ateion replaces memory-based validation with `}</span>
         <span className="font-['IBM Plex Sans',sans-serif] italic leading-[28px] sm:leading-[32px] text-[28px] sm:text-[36px]">Capability-based intelligence.</span>
       </p>
@@ -463,7 +463,7 @@ function RedIntelligenceContent() {
 
 function RedIntelligenceCard() {
   return (
-    <div className="bg-[#ff6b6b] content-stretch flex flex-col items-start pb-[24px] sm:pb-[32px] pl-[24px] sm:pl-[50px] pr-[16px] sm:pr-[24px] pt-[24px] sm:pt-[32px] relative rounded-[13px] sm:rounded-[20px] shrink-0 md:shrink flex-1 w-full">
+    <div className="bg-[#ff6b6b] content-stretch flex flex-col items-center justify-center px-[24px] sm:px-[32px] py-[24px] sm:py-[32px] relative rounded-[13px] sm:rounded-[20px] shrink-0 md:shrink flex-1 w-full">
       <RedIntelligenceContent />
     </div>
   );
@@ -491,8 +491,8 @@ function HeroFeatureCardsRow() {
 
 function PoweredByNumbersText() {
   return (
-    <div className="flex items-center justify-center relative shrink-0 mb-8" data-name="text">
-      <p className="font-semibold not-italic opacity-90 relative text-[36px] text-center text-white tracking-wide whitespace-nowrap" style={{ fontFamily: "'OV Soge', sans-serif" }}>
+    <div className="flex items-center justify-center relative shrink-0 mb-6 sm:mb-8 px-4" data-name="text">
+      <p className="font-semibold not-italic opacity-90 relative text-[28px] sm:text-[32px] md:text-[36px] text-center text-white tracking-wide" style={{ fontFamily: "'OV Soge', sans-serif" }}>
         Powered by Proven Numbers
       </p>
     </div>
@@ -543,7 +543,7 @@ function CounterGlobalAlliances() {
 
 function GlobalPresenceCountersRow() {
   return (
-    <div className="content-stretch flex items-center justify-around relative shrink-0 w-full py-[24px]">
+    <div className="content-stretch flex flex-col sm:flex-row items-center justify-center sm:justify-around relative shrink-0 w-full gap-[28px] sm:gap-[12px] py-[12px] sm:py-[24px]">
       <CounterPartnerInstitutions />
       <CounterStudentsEmpowered />
       <CounterGlobalAlliances />
@@ -553,7 +553,7 @@ function GlobalPresenceCountersRow() {
 
 function GlobalPresenceTitleInner() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[28px] sm:gap-[40px] md:gap-[48px] items-center relative shrink-0 w-full max-w-[1200px]">
       <FadeIn>
         <PoweredByNumbersText />
         <GlobalPresenceCountersRow />
@@ -564,7 +564,7 @@ function GlobalPresenceTitleInner() {
 
 function GlobalPresenceTitleWrapper() {
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full mb-[64px]">
+    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full mb-[32px] sm:mb-[48px] md:mb-[64px]">
       <GlobalPresenceTitleInner />
     </div>
   );
@@ -572,10 +572,10 @@ function GlobalPresenceTitleWrapper() {
 
 function GlobalPresenceMapContainer() {
   return (
-    <div className="content-stretch flex flex-col gap-[64px] items-center relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] sm:gap-[48px] md:gap-[64px] items-center relative shrink-0 w-full max-w-[1280px] mx-auto">
       <GlobalPresenceTitleWrapper />
-      <div className="aspect-[1280/500] relative shrink-0 w-full bg-[#050505] overflow-hidden">
-        <div className="absolute inset-0 scale-[0.95] origin-center flex items-center justify-center">
+      <div className="relative shrink-0 w-full overflow-hidden rounded-[24px] sm:rounded-[28px] md:rounded-[32px] bg-[#050505] min-h-[260px] sm:min-h-[360px] md:min-h-[500px]">
+        <div className="absolute inset-0 scale-[1.08] sm:scale-[1] origin-center flex items-center justify-center">
           <DotMap />
         </div>
       </div>
@@ -593,8 +593,8 @@ function GlobalPresenceMapPadding() {
 
 function GlobalPresenceMapBg() {
   return (
-    <div className="bg-black h-auto relative shrink-0 w-full py-[48px] sm:py-[64px] md:py-[80px] dark-section">
-      <div className="content-stretch flex flex-col items-center relative size-full px-4">
+    <div className="bg-black h-auto relative shrink-0 w-full py-[40px] sm:py-[56px] md:py-[80px] dark-section">
+      <div className="content-stretch flex flex-col items-center relative size-full px-[16px] sm:px-[24px] md:px-[40px]">
         <GlobalPresenceMapPadding />
       </div>
     </div>
@@ -604,7 +604,7 @@ function GlobalPresenceMapBg() {
 function GlobalPresenceMainHeading() {
   return (
     <div className="w-full flex justify-center mb-6 sm:mb-8 md:mb-10 px-4">
-      <p className="font-semibold leading-tight text-[36px] sm:text-[42px] md:text-[48px] text-black text-center" style={{ fontFamily: "'OV Soge', sans-serif" }}>Global Presence</p>
+      <p className="font-semibold leading-tight text-[32px] sm:text-[40px] md:text-[48px] text-black text-center" style={{ fontFamily: "'OV Soge', sans-serif" }}>Global Presence</p>
     </div>
   );
 }
@@ -707,8 +707,8 @@ function HeroAndEducationRow() {
 
 function Tag({ text, className = "" }: { text: string, className?: string }) {
   return (
-    <div className={`border-[#272424] border-[0.6px] border-solid rounded-full px-4 py-1.5 h-[30px] flex items-center justify-center bg-transparent ${className}`}>
-      <p className="font-['DM Sans',sans-serif] font-normal leading-none text-[#272424] text-[13px] text-center pt-[1px]" style={{ fontVariationSettings: "'opsz' 14" }}>
+    <div className={`border-[#272424] border-[0.6px] border-solid rounded-full h-[54px] px-7 flex items-center justify-center bg-transparent ${className}`}>
+      <p className="font-['DM Sans',sans-serif] font-normal leading-none text-[#272424] text-[17px] text-center pt-[1px]" style={{ fontVariationSettings: "'opsz' 14" }}>
         {text}
       </p>
     </div>
@@ -751,8 +751,8 @@ function GcoFeatureTagsRow() {
 
 function GcoFeatureBadge({ activeData }: { activeData: { id: string, number: string, title: string, description: string, hasTags: boolean } }) {
   return (
-    <div className="col-1 content-stretch flex flex-col gap-[32px] items-start ml-0 mt-0 relative row-1 w-[392px]">
-      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full min-h-[220px]">
+    <div className="col-1 content-stretch flex flex-col gap-[18px] sm:gap-[24px] items-start ml-0 mt-0 relative row-1 w-full max-w-[392px]">
+      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full min-h-[170px] sm:min-h-[220px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeData.id}
@@ -762,18 +762,18 @@ function GcoFeatureBadge({ activeData }: { activeData: { id: string, number: str
             transition={{ duration: 0.3 }}
             className="w-full flex flex-col items-start"
           >
-            <p className="font-['DM_Sans:Light',sans-serif] font-light leading-[2] relative shrink-0 text-[24px] text-black w-full opacity-60 mb-2" style={{ fontVariationSettings: "'opsz' 14" }}>
+            <p className="font-['DM_Sans:Light',sans-serif] font-light leading-[2] relative shrink-0 text-[20px] sm:text-[24px] text-black w-full opacity-60 mb-2" style={{ fontVariationSettings: "'opsz' 14" }}>
               ({activeData.number})
             </p>
             <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
-              <p className="leading-[1.19] not-italic relative shrink-0 text-[48px] text-black tracking-[0.4px] w-full max-w-[500px]" style={{ fontFamily: "'OV Soge', sans-serif" }}>
+              <p className="leading-[1.19] not-italic relative shrink-0 text-[34px] sm:text-[42px] md:text-[48px] text-black tracking-[0.4px] w-full max-w-[500px]" style={{ fontFamily: "'OV Soge', sans-serif" }}>
                 {activeData.title}
               </p>
               <div className="flex justify-start w-full">
                 {activeData.hasTags ? (
                   <GcoFeatureTagsRow />
                 ) : (
-                  <p className="font-['Inter',sans-serif] text-[18px] text-[rgba(0,0,0,0.7)] leading-relaxed pr-8">
+                  <p className="font-['Inter',sans-serif] text-[16px] sm:text-[18px] text-[rgba(0,0,0,0.7)] leading-relaxed sm:pr-8">
                     {activeData.description}
                   </p>
                 )}
@@ -1179,16 +1179,30 @@ function EcosystemSection() {
   const activeData = ecosystemData[activeId as keyof typeof ecosystemData];
 
   return (
-    <div className="flex flex-col items-center w-full py-[60px] sm:py-[80px] md:py-[120px] overflow-hidden bg-[#f7f3eb] px-4">
-      <p className="font-['Outfit',sans-serif] text-[36px] sm:text-[48px] md:text-[58px] text-black text-center w-full mb-[20px] sm:mb-[30px] md:mb-[40px] tracking-tight px-4">
+    <div className="flex flex-col items-center w-full py-[48px] sm:py-[72px] md:py-[120px] overflow-hidden bg-[#f7f3eb] px-[16px] sm:px-[24px] md:px-[40px]">
+      <p className="font-['Outfit',sans-serif] text-[36px] sm:text-[48px] md:text-[58px] text-black text-center w-full mb-[16px] sm:mb-[24px] md:mb-[40px] tracking-tight px-4">
         <span className="leading-[1.2]">Ateion as an </span>
         <span className="font-['IBM Plex Sans',sans-serif] italic">Ecosystem</span>
       </p>
 
-      {/* Unified Whole Entity: Shifted left by -100px to satisfy the visual centering request and address the "extra space" on the left */}
-      <div className="w-full flex flex-row items-center justify-center gap-[60px] scale-[0.88] origin-center translate-x-[-100px]">
-        <GcoFeatureBadge activeData={activeData} />
-        <EcosystemCluster onBubbleClick={setActiveId} />
+      <div className="w-full max-w-[1280px] flex flex-col xl:flex-row items-center xl:items-center justify-center gap-[24px] sm:gap-[32px] md:gap-[48px] xl:gap-[60px]">
+        <div className="w-full xl:w-auto flex justify-center xl:justify-start order-2 xl:order-1">
+          <GcoFeatureBadge activeData={activeData} />
+        </div>
+        <div className="w-full xl:w-auto order-1 xl:order-2">
+          <div className="xl:hidden w-full overflow-x-auto overflow-y-hidden pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="w-max px-4">
+              <div className="origin-top-left scale-[0.56] min-[420px]:scale-[0.68] sm:scale-[0.82] md:scale-[0.92]">
+                <EcosystemCluster onBubbleClick={setActiveId} />
+              </div>
+            </div>
+          </div>
+          <div className="hidden xl:flex justify-center overflow-hidden">
+            <div className="origin-top-center scale-[0.88]">
+              <EcosystemCluster onBubbleClick={setActiveId} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

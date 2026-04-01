@@ -9,6 +9,10 @@ import logoPolicy from "../../assets/gco/logo-education-policy2020.jpg";
 function HeroSection() {
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
+  const alignedLogos = [
+    { src: logoEducation, alt: "Education Logo" },
+    { src: logoPolicy, alt: "Education Policy 2020 Logo" },
+  ];
 
   const images = [
     "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=300&fit=crop",
@@ -54,10 +58,9 @@ function HeroSection() {
           <div className="aligned-with">
             <h3 className="aligned-title">Aligned with:</h3>
             <div className="logos">
-              <img src={logoEducation} alt="Education Logo" />
-              <img src={logoPolicy} alt="Education Policy 2020 Logo" />
-              <img src={logoEducation} alt="Partner Logo" />
-              <img src={logoPolicy} alt="Education Policy 2020 Logo" />
+              {alignedLogos.map((logo, index) => (
+                <img key={index} src={logo.src} alt={logo.alt} />
+              ))}
             </div>
           </div>
         </div>
