@@ -12,16 +12,18 @@
   background-color: #f7f3eb;
   padding: 0 5%;
   text-align: center;
-  min-height: 100vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
+  align-items: center;
+  justify-content: start;
+  position: relative; 
+  overflow: visible;
   margin-top: 0;
+  margin-bottom: 0; 
 }
 
 .overlay {
-  flex: 1;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -29,12 +31,13 @@
 }
 
 .hero-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding-top: 0;
-  padding-bottom: clamp(4rem, 8vw, 7rem);
+  padding-bottom: 0;
 }
 
 .hero-title {
@@ -59,7 +62,7 @@
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 6rem;
   flex-wrap: wrap;
 }
 
@@ -100,7 +103,9 @@
 }
 
 .aligned-with {
-  margin-top: 3.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f7f3eb;
 }
 
 .aligned-title {
@@ -143,10 +148,10 @@
 @media (max-width: 600px) {
   .hero {
     padding: 0 5%;
-    min-height: auto;
+    height: 180vh;
   }
   .hero-content {
-    padding-top: 60px;
+    padding-top: 0px;
     padding-bottom: 4rem;
   }
   .hero-buttons {
