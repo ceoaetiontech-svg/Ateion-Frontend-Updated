@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import svgPaths from "../../imports/svg-paths";
+import svgPaths from "../svg-paths";
 
 function Tag({ text, className = "" }: { text: string; className?: string }) {
   return (

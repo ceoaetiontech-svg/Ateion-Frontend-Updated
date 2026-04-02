@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: clamp(1.5rem, 3.5vw, 2.625rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-weight: 400;
   color: #e8e8e8;
   line-height: 1.25;

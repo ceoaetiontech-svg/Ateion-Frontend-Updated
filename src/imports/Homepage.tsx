@@ -22,8 +22,8 @@ import imgImage13 from "../assets/a440209918fa81a1c528e2e95290d4f1f12546e7.png";
 import DotMap from "../components/DotMap";
 import SharedFooter from "../app/components/SharedFooter";
 import SharedNavbar from "../app/components/SharedNavbar";
-import RedIntelligenceCard from "../components/home/RedIntelligenceCard";
-import EcosystemSection from "../components/home/EcosystemSection";
+import RedIntelligenceCard from "./home/RedIntelligenceCard";
+import EcosystemSection from "./home/EcosystemSection";
 
 /* ─────────────────────────────────────────────
    UTILITY COMPONENTS

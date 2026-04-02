@@ -6,7 +6,7 @@
 
 .faq-title {
   text-align: center;
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
   font-family: 'SF Pro Display', sans-serif;
   margin-bottom: 48px;
 }
