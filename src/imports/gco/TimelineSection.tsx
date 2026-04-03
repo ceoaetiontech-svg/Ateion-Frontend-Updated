@@ -35,54 +35,73 @@ function TimelineStepComponent({ step, index }: { step: any, index: number }) {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="timeline-step">
-      <motion.div
-        className={`timeline-content-side timeline-left ${step.side === 'left' ? 'text-side' : 'icon-side'}`}
-        initial={{ opacity: 0, x: 50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        {step.side === 'left' ? (
-          <p className="timeline-text text-right">{step.text}</p>
-        ) : (
-          <motion.div
-            className="timeline-icon-container"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            {step.icon}
-          </motion.div>
-        )}
-      </motion.div>
+    <div ref={ref}>
+      <div className="timeline-step timeline-step-desktop">
+        <motion.div
+          className={`timeline-content-side timeline-left ${step.side === 'left' ? 'text-side' : 'icon-side'}`}
+          initial={{ opacity: 0, x: 50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {step.side === 'left' ? (
+            <p className="timeline-text text-right">{step.text}</p>
+          ) : (
+            <motion.div
+              className="timeline-icon-container"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              {step.icon}
+            </motion.div>
+          )}
+        </motion.div>
+
+        <motion.div
+          className="timeline-circle"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0 }}
+        >
+          <span className="timeline-number">{step.number}</span>
+        </motion.div>
+
+        <motion.div
+          className={`timeline-content-side timeline-right ${step.side === 'right' ? 'text-side' : 'icon-side'}`}
+          initial={{ opacity: 0, x: -50 }}
+          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          {step.side === 'right' ? (
+            <p className="timeline-text text-left">{step.text}</p>
+          ) : (
+            <motion.div
+              className="timeline-icon-container"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              {step.icon}
+            </motion.div>
+          )}
+        </motion.div>
+      </div>
 
       <motion.div
-        className="timeline-circle"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-        transition={{ duration: 0.6, delay: 0 }}
+        className="timeline-step-mobile"
+        initial={{ opacity: 0, y: 24 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+        transition={{ duration: 0.55, delay: 0.15 }}
       >
-        <span className="timeline-number">{step.number}</span>
-      </motion.div>
-
-      <motion.div
-        className={`timeline-content-side timeline-right ${step.side === 'right' ? 'text-side' : 'icon-side'}`}
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        {step.side === 'right' ? (
-          <p className="timeline-text text-left">{step.text}</p>
-        ) : (
-          <motion.div
-            className="timeline-icon-container"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+        <div className="timeline-circle timeline-circle-mobile">
+          <span className="timeline-number">{step.number}</span>
+        </div>
+        <div className="timeline-mobile-card">
+          <div className="timeline-icon-container timeline-icon-container-mobile">
             {step.icon}
-          </motion.div>
-        )}
+          </div>
+          <p className="timeline-text timeline-text-mobile">{step.text}</p>
+        </div>
       </motion.div>
     </div>
   );
@@ -91,6 +110,19 @@ function TimelineStepComponent({ step, index }: { step: any, index: number }) {
 export default function TimelineSection() {
   const lineRef = useRef<HTMLDivElement>(null);
   const [lineHeight, setLineHeight] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const updateIsMobile = (event?: MediaQueryListEvent) => {
+      setIsMobile(event ? event.matches : mediaQuery.matches);
+    };
+
+    updateIsMobile();
+    mediaQuery.addEventListener('change', updateIsMobile);
+
+    return () => mediaQuery.removeEventListener('change', updateIsMobile);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -128,13 +160,13 @@ export default function TimelineSection() {
           <div
             ref={lineRef}
             className="timeline-line-bg"
-            style={{ height: `${(timelineSteps.length - 1) * 200}px` }}
+            style={{ height: `${(timelineSteps.length - 1) * (isMobile ? 164 : 200)}px` }}
           />
 
           <motion.div
             className="timeline-line-fill"
             style={{
-              height: `${(timelineSteps.length - 1) * 200}px`,
+              height: `${(timelineSteps.length - 1) * (isMobile ? 164 : 200)}px`,
               scaleY: lineHeight / 100,
               transformOrigin: 'top',
               backgroundColor: '#1E1632'

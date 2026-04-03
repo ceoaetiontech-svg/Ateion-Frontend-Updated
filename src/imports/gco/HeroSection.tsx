@@ -1,14 +1,18 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router";
 import { ImageTrail } from "../../app/components/ui/image-trail";
-import Navbar from "../../app/components/Navbar";
 import "../../styles/gco/HeroSection.css";
 import logoEducation from "../../assets/gco/logo-education.png";
 import logoPolicy from "../../assets/gco/logo-education-policy2020.jpg";
+import "../../styles/fonts.css";
 
 function HeroSection() {
   const navigate = useNavigate();
   const ref = useRef<HTMLDivElement>(null);
+  const alignedLogos = [
+    { src: logoEducation, alt: "Education Logo" },
+    { src: logoPolicy, alt: "Education Policy 2020 Logo" },
+  ];
 
   const images = [
     "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=300&fit=crop",
@@ -37,7 +41,7 @@ function HeroSection() {
       </ImageTrail>
       <div className="overlay">
         <div className="hero-content">
-          <h1 className="hero-title" style={{marginTop: "150px"}}>
+          <h1 className="hero-title" style={{ fontFamily: "'OV Soge', sans-serif" }}>
             Global Capability Olympiad
           </h1>
           <p className="hero-subtitle">
@@ -54,10 +58,9 @@ function HeroSection() {
           <div className="aligned-with">
             <h3 className="aligned-title">Aligned with:</h3>
             <div className="logos">
-              <img src={logoEducation} alt="Education Logo" />
-              <img src={logoPolicy} alt="Education Policy 2020 Logo" />
-              <img src={logoEducation} alt="Partner Logo" />
-              <img src={logoPolicy} alt="Education Policy 2020 Logo" />
+              {alignedLogos.map((logo, index) => (
+                <img key={index} src={logo.src} alt={logo.alt} />
+              ))}
             </div>
           </div>
         </div>

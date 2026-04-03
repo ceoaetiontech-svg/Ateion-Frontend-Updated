@@ -14,8 +14,8 @@ import logo from "../../assets/logo.png";
 
 const navTextClass = "font-bold text-[13px] whitespace-nowrap font-manrope";
 
-function LogoContainer() {
-  const [isLogoWhite, setIsLogoWhite] = useState(false);
+function useNavbarOnDark() {
+  const [isOnDarkSection, setIsOnDarkSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,34 +23,47 @@ function LogoContainer() {
       if (!navbar) return;
       
       const navRect = navbar.getBoundingClientRect();
+      const navMidY = navRect.top + navRect.height / 2;
+      
+      // Find all sections that should trigger the white logo/button
       const darkSections = document.querySelectorAll('.dark-section');
       
       let overDark = false;
-      // Also check standard dark themes like the NextThemes data-theme
+
+      // Check for theme attribute first
       const isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
       
+      // Check physical overlap
       darkSections.forEach(section => {
         const rect = section.getBoundingClientRect();
-        // Check if navbar's mid-height is within the dark section's vertical bounds
-        const navMidY = navRect.top + navRect.height / 2;
+        
+        // If the middle of the navbar is within the top and bottom of a dark section
         if (navMidY >= rect.top && navMidY <= rect.bottom) {
           overDark = true;
         }
       });
       
-      setIsLogoWhite(overDark || isDarkTheme);
+      setIsOnDarkSection(overDark || isDarkTheme);
     };
 
+    // Use passive scroll for performance
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
+    
+    // Initial check
     handleScroll();
-    setTimeout(handleScroll, 100); // Trigger after slight delay to ensure layout shifts are resolved
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
+  return isOnDarkSection;
+}
+
+function LogoContainer() {
+  const isLogoWhite = useNavbarOnDark();
 
   return (
     <div className="flex items-center relative shrink-0">
@@ -164,7 +177,7 @@ function GetConnectedBtn({ onClick }: { onClick?: () => void }) {
   );
 }
 
-function MobileMenuIcon({ isOpen, onClick }: { isOpen: boolean; onClick: () => void }) {
+function MobileMenuIcon({ isOpen, onClick, isWhite }: { isOpen: boolean; onClick: () => void; isWhite: boolean }) {
   return (
     <button
       onClick={onClick}
@@ -172,7 +185,7 @@ function MobileMenuIcon({ isOpen, onClick }: { isOpen: boolean; onClick: () => v
       aria-label="Toggle menu"
     >
       <motion.div
-        className="w-[24px] h-[2px] bg-[#1a1a1a] rounded-full origin-center"
+        className={`w-[24px] h-[2px] rounded-full origin-center transition-colors duration-300 ${isWhite ? 'bg-white' : 'bg-[#1a1a1a]'}`}
         animate={{
           rotate: isOpen ? 45 : 0,
           y: isOpen ? 6 : 0,
@@ -180,14 +193,14 @@ function MobileMenuIcon({ isOpen, onClick }: { isOpen: boolean; onClick: () => v
         transition={{ duration: 0.2 }}
       />
       <motion.div
-        className="w-[24px] h-[2px] bg-[#1a1a1a] rounded-full my-[4px]"
+        className={`w-[24px] h-[2px] rounded-full my-[4px] transition-colors duration-300 ${isWhite ? 'bg-white' : 'bg-[#1a1a1a]'}`}
         animate={{
           opacity: isOpen ? 0 : 1,
         }}
         transition={{ duration: 0.2 }}
       />
       <motion.div
-        className="w-[24px] h-[2px] bg-[#1a1a1a] rounded-full origin-center"
+        className={`w-[24px] h-[2px] rounded-full origin-center transition-colors duration-300 ${isWhite ? 'bg-white' : 'bg-[#1a1a1a]'}`}
         animate={{
           rotate: isOpen ? -45 : 0,
           y: isOpen ? -6 : 0,
@@ -200,6 +213,7 @@ function MobileMenuIcon({ isOpen, onClick }: { isOpen: boolean; onClick: () => v
 
 export default function SharedNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const isNavbarOnDark = useNavbarOnDark();
   const navigate = useNavigate();
 
   const handleNavClick = (path: string) => {
@@ -208,24 +222,23 @@ export default function SharedNavbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] bg-[#f7f3eb]/95 backdrop-blur-sm md:bg-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-[100] bg-transparent">
       <div className="flex items-center justify-between px-[16px] md:px-[24px] py-[12px] md:py-[20px] w-full max-w-[1280px] mx-auto">
-        <div className="flex flex-1 items-center justify-start">
+        <div className="flex items-center justify-start">
           <LogoContainer />
+          <div className="hidden md:flex items-center ml-[24px] lg:ml-[32px]">
+            <NavLinks />
+          </div>
         </div>
         
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-[2] items-center justify-center">
-          <NavLinks />
-        </div>
-        
-        <div className="hidden md:flex flex-1 items-center justify-end">
+        <div className="hidden md:flex items-center justify-end ml-auto">
           <GetConnectedBtn />
         </div>
 
         {/* Mobile Menu Button */}
         <MobileMenuIcon 
           isOpen={isMobileMenuOpen} 
+          isWhite={isNavbarOnDark}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
         />
       </div>
