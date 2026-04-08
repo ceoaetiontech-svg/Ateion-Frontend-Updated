@@ -393,7 +393,7 @@ function EcosystemCluster({
         isDark={true}
         gradientId="gcoGrad"
         title="Kronos"
-        description="Focused on specialized capabilities and advanced skill validation within the Ateion ecosystem."
+        description="A system that verifies what you’re actually good at."
         titleSize="20px"
         onClick={() => onBubbleClick("kronos")}
       />
@@ -406,7 +406,7 @@ function EcosystemCluster({
         isDark={true}
         gradientId="ateionGrad"
         title="Vouch"
-        description="A decentralized verification protocol for authenticating learner capabilities and achievements."
+        description="A way to get trusted proof of what you’ve accomplished."
         titleSize="22px"
         onClick={() => onBubbleClick("vouch")}
       />
@@ -465,14 +465,14 @@ export default function EcosystemSection() {
       number: "03",
       title: "Kronos",
       description:
-        "Focused on specialized capabilities and advanced skill validation within the Ateion ecosystem.",
+        "A system that verifies what you’re actually good at.",
     },
     vouch: {
       id: "vouch",
       number: "04",
       title: "Vouch",
       description:
-        "A decentralized verification protocol for authenticating learner capabilities and achievements.",
+        "A way to get trusted proof of what you’ve accomplished.",
     },
     workshops: {
       id: "workshops",
@@ -560,7 +560,7 @@ export default function EcosystemSection() {
       >
         <div className="flex justify-center">
           <div
-            className="flex flex-row items-start gap-[48px] lg:gap-[64px] px-8 lg:px-16"
+            className="flex flex-row items-center gap-[48px] lg:gap-[64px] px-8 lg:px-16"
             style={{
               width: DESKTOP_CONTENT_WIDTH,
               maxWidth: "100%",
