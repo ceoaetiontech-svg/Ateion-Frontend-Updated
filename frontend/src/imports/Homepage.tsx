@@ -398,10 +398,10 @@ function EducationStatusWrapper() {
         <div className="flex flex-col gap-[16px] sm:gap-[24px] items-start w-full">
           {/* Header row */}
           <div className="content-stretch flex flex-col sm:flex-row items-start sm:items-center justify-between not-italic relative shrink-0 text-black w-full py-[24px] sm:py-[48px] gap-[24px] sm:gap-[64px]">
-            <p className="leading-tight relative shrink-0 text-[28px] sm:text-[36px] md:text-[48px] flex-1" style={{ fontFamily: "'OV Soge', sans-serif" }}>
+            <p className="leading-tight relative shrink-0 text-[32px] sm:text-[40px] md:text-[52px] lg:text-[60px] flex-1" style={{ fontFamily: "'OV Soge', sans-serif" }}>
               Education is not broken.
             </p>
-            <p className="font-['Inter',sans-serif] leading-relaxed relative shrink-0 text-[16px] sm:text-[18px] text-[rgba(0,0,0,0.7)] flex-1">
+            <p className="font-['Inter',sans-serif] leading-relaxed relative shrink-0 text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-[rgba(0,0,0,0.7)] flex-1">
               <span>{`Its measurement system is `}</span>
               <span className="font-bold">outdated.</span>
               <span>{` Ateion replaces memory-based validation with `}</span>

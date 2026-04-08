@@ -14,7 +14,7 @@ function VerticalTicker() {
     return () => clearInterval(timer);
   }, [words.length]);
 
-  const ITEM_HEIGHT = 52;
+  const ITEM_HEIGHT = 80;
   // Duplicate words so wrap-around always has a prev/next
   const repeated = [...words, ...words, ...words];
   const offset = words.length; // start from middle set
@@ -24,7 +24,7 @@ function VerticalTicker() {
       style={{
         height: `${ITEM_HEIGHT * 3}px`,
         overflow: "hidden",
-        width: "329px",
+        width: "380px",
         position: "relative",
       }}
     >
@@ -53,7 +53,7 @@ function VerticalTicker() {
                 height: `${ITEM_HEIGHT}px`,
                 display: "flex",
                 alignItems: "center",
-                fontSize: isActive ? "36px" : "30px",
+                fontSize: isActive ? "64px" : "48px",
                 fontFamily: "'OV Soge', sans-serif",
                 fontWeight: 600,
                 whiteSpace: "nowrap",
@@ -75,17 +75,18 @@ function VerticalTicker() {
 
 function DekstopCard() {
     return (
-            <div className="bg-[#ff6b6b] content-stretch flex flex-col items-center justify-center pb-[24px] sm:pb-[32px] pl-[24px] sm:pl-[50px] pr-[16px] sm:pr-[24px] pt-[24px] sm:pt-[32px] relative rounded-[13px] sm:rounded-[20px] shrink-0 md:shrink flex-1 w-full">
-      <div className="content-stretch flex flex-col gap-[12px] items-center relative shrink-0 w-full max-w-[510px]">
-        <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
-          <div className="h-auto sm:h-[132px] relative shrink-0 w-full max-w-[235px]">
-            <p className="relative leading-[normal] not-italic text-[20px] sm:text-[24px] text-black w-full" style={{ fontFamily: "'OV Soge', sans-serif" }}>Education is not broken. Its measurement system is :</p>
+            <div className="bg-[#ff6b6b] content-stretch flex flex-col items-center justify-center pb-[32px] sm:pb-[56px] px-[24px] sm:px-[50px] pt-[32px] sm:pt-[56px] relative rounded-[13px] sm:rounded-[20px] shrink-0 md:shrink flex-1 w-full">
+      <div className="content-stretch flex flex-col gap-[36px] items-center relative shrink-0 w-full max-w-[800px]">
+        <div className="content-stretch flex items-center justify-between relative shrink-0 w-full gap-[24px]">
+          <div className="h-auto relative shrink-0 w-full max-w-[420px]">
+            <p className="relative leading-[1.2] not-italic text-[32px] sm:text-[40px] md:text-[48px] text-black w-full" style={{ fontFamily: "'OV Soge', sans-serif" }}>Education is not broken. Its measurement system is :</p>
           </div>
           <VerticalTicker />
         </div>
-        <p className="font-['Inter',sans-serif] h-auto sm:h-[88px] leading-[0] not-italic relative shrink-0 text-[0px] text-black w-full flex-1 mt-4 sm:mt-0">
-          <span className="leading-[28px] sm:leading-[32px] text-[18px] sm:text-[20px]">{`Ateion replaces memory-based validation with `}</span>
-          <span className="font-['IBM Plex Sans',sans-serif] italic leading-[28px] sm:leading-[32px] text-[28px] sm:text-[36px]">Capability-based intelligence.</span>
+        <p className="font-['Inter',sans-serif] h-auto leading-[normal] not-italic relative shrink-0 text-black w-full flex-1 mt-4 sm:mt-0">
+          <span className="leading-[1.4] text-[24px] sm:text-[30px]">{`Ateion replaces memory-based validation with `}</span>
+          <br className="hidden sm:block" />
+          <span className="font-['IBM Plex Sans',sans-serif] italic leading-[1.4] text-[36px] sm:text-[48px]">Capability-based intelligence.</span>
         </p>
       </div>
     </div>
