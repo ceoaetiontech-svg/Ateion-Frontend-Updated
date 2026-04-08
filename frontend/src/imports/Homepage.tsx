@@ -459,7 +459,7 @@ function EducationStatusWrapper() {
                   <div className="flex items-center gap-[8px]">
                     <span className="text-[12px] sm:text-[13px] uppercase tracking-wider text-[#666] font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>{item.tag}</span>
                   </div>
-                  <h3 className="text-[20px] sm:text-[24px] md:text-[28px] leading-[1.25] text-black group-hover:text-[#fb4444] transition-colors" style={{ fontFamily: "'OV Soge', sans-serif", fontWeight: 600 }}>{item.title}</h3>
+                  <h3 className="text-[20px] sm:text-[24px] md:text-[28px] leading-[1.25] text-black group-hover:text-[#e03a3a] transition-colors" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>{item.title}</h3>
                 </div>
                 <div className="flex items-center gap-[12px] mt-[24px]">
                   <div className="h-[2px] w-[24px] bg-[#fb4444] transition-all duration-300 group-hover:w-[40px]" />

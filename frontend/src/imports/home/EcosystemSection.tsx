@@ -2,30 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import svgPaths from "../svg-paths";
 
-function Tag({ text, className = "" }: { text: string; className?: string }) {
-  return (
-    <div
-      className={`border-[#272424] border-[0.6px] border-solid rounded-full px-6 py-2 h-[54px] flex items-center justify-center bg-transparent ${className}`}
-    >
-      <p
-        className="font-['Outfit',sans-serif] font-normal leading-none text-[#272424] text-[17px] text-center pt-[1px]"
-        style={{ fontVariationSettings: "'opsz' 14" }}
-      >
-        {text}
-      </p>
-    </div>
-  );
-}
 
-function GcoFeatureTagsRow() {
-  return (
-    <div className="flex flex-wrap gap-[12px]">
-      <Tag text="Brand Strategy" />
-      <Tag text="Brand Naming" />
-      <Tag text="Tagline" />
-    </div>
-  );
-}
 
 function GcoFeatureBadge({
   activeData,
@@ -40,7 +17,7 @@ function GcoFeatureBadge({
 }) {
   return (
     // On mobile: full width, centered text. On desktop: fixed 392px, left-aligned.
-    <div className={`flex flex-col ${activeData.id === "gco" ? "" : "gap-[32px]"} items-start w-full md:w-[392px] md:shrink-0`}>
+    <div className="flex flex-col gap-[32px] items-start w-full md:w-[392px] md:shrink-0">
       <div className="flex flex-col items-start w-full min-h-[180px] md:min-h-[220px]">
         <AnimatePresence mode="wait">
           <motion.div
@@ -59,57 +36,16 @@ function GcoFeatureBadge({
                 {activeData.title}
               </p>
               <div className="flex justify-start w-full">
-                {activeData.hasTags ? (
-                  activeData.id === "gco" ? (
-                    <div className="flex flex-col gap-4 w-full">
-                      <div className="flex gap-4">
-                        <Tag text="Brand Strategy" />
-                        <Tag text="Brand Naming" />
-                      </div>
-                      <div className="flex gap-4 items-center">
-                        <Tag text="Tagline" />
-                        <div
-                          className="flex items-center justify-between bg-[#161616] h-[54px] pl-7 pr-6 rounded-full w-[174px] cursor-pointer group hover:bg-[#222] transition-colors"
-                          data-name="view more"
-                        >
-                          <p className="font-['Outfit',sans-serif] leading-none text-[17px] text-white tracking-[0.16px] whitespace-nowrap pt-0.5">
-                            View More
-                          </p>
-                          <div className="flex items-center justify-center">
-                            <div className="flex items-center justify-center h-[26px] w-[26px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="white"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="M7 17L17 7M7 7h10v10" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <GcoFeatureTagsRow />
-                  )
-                ) : (
-                  <p className="font-['Inter',sans-serif] text-[16px] md:text-[18px] text-[rgba(0,0,0,0.7)] leading-relaxed md:pr-8">
-                    {activeData.description}
-                  </p>
-                )}
+                <p className="font-['Inter',sans-serif] text-[16px] md:text-[18px] text-[rgba(0,0,0,0.7)] leading-relaxed md:pr-8">
+                  {activeData.description}
+                </p>
               </div>
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {activeData.id !== "gco" && (
-        <div
+      <div
           className="flex items-center justify-between bg-[#161616] h-[54px] pl-7 pr-6 rounded-full w-[174px] cursor-pointer group hover:bg-[#222] transition-colors"
           data-name="view more"
         >
@@ -132,8 +68,7 @@ function GcoFeatureBadge({
               </svg>
             </div>
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -517,7 +452,6 @@ export default function EcosystemSection() {
       title: "Global Capability Olympiad (GCO)",
       description:
         "From early AI workshops to the Global Capability Olympiad, and emerging initiatives like KRONOS and VOUCH.",
-      hasTags: true,
     },
     ateion: {
       id: "ateion",
@@ -525,7 +459,6 @@ export default function EcosystemSection() {
       title: "Ateion",
       description:
         "Ateion is building the infrastructure for a capability-based future by integrating early AI workshops with standard-setting competitions.",
-      hasTags: false,
     },
     kronos: {
       id: "kronos",
@@ -533,7 +466,6 @@ export default function EcosystemSection() {
       title: "Kronos",
       description:
         "Focused on specialized capabilities and advanced skill validation within the Ateion ecosystem.",
-      hasTags: false,
     },
     vouch: {
       id: "vouch",
@@ -541,7 +473,6 @@ export default function EcosystemSection() {
       title: "Vouch",
       description:
         "A decentralized verification protocol for authenticating learner capabilities and achievements.",
-      hasTags: false,
     },
     workshops: {
       id: "workshops",
@@ -549,7 +480,6 @@ export default function EcosystemSection() {
       title: "Workshops",
       description:
         "Engaging, hands-on learning experiences designed to bridge theory with practical AI execution.",
-      hasTags: false,
     },
   };
 
