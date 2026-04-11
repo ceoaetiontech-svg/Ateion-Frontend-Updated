@@ -21,7 +21,7 @@
   overflow: hidden;
   margin-top: 0;
   margin-bottom: 0;
-  padding-top: 220px;
+  padding-top: 120px;
   padding-bottom: 0;
 }
 
@@ -45,8 +45,9 @@
   font-family: 'OV Soge', sans-serif;
   font-size: clamp(2rem, 5vw, 4.5rem);
   font-weight: 700;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   color: #000;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
@@ -149,15 +150,28 @@
 @media (max-width: 600px) {
   .hero {
     padding: 0 5%;
-    height: 180vh;
+    min-height: 100vh;
+    padding-top: 100px;
   }
   .hero-content {
     padding-top: 0px;
-    padding-bottom: 4rem;
+    padding-bottom: 2rem;
+  }
+  .hero-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    line-height: 1.6;
+    margin-bottom: 32px;
   }
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+    gap: 16px;
+    margin-bottom: 3rem;
   }
   .btn-secondary,
   .btn-black {
@@ -165,7 +179,13 @@
     max-width: 18rem;
   }
   .aligned-with {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .aligned-title {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
   }
   .logos img {
     width: min(100%, 320px);
