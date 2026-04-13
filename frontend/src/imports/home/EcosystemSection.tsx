@@ -59,48 +59,7 @@ function GcoFeatureBadge({
                 {activeData.title}
               </p>
               <div className="flex justify-start w-full">
-                {activeData.hasTags ? (
-                  activeData.id === "gco" ? (
-                    <div className="flex flex-col gap-4 w-full">
-                      <div className="flex gap-4">
-                        <Tag text="Brand Strategy" />
-                        <Tag text="Brand Naming" />
-                      </div>
-                      <div className="flex gap-4 items-center">
-                        <Tag text="Tagline" />
-                        <div
-                          className="flex items-center justify-between bg-[#161616] h-[54px] pl-7 pr-6 rounded-full w-[174px] cursor-pointer group hover:bg-[#222] transition-colors"
-                          role="button"
-                          tabIndex={0}
-                          aria-label="View more about GCO"
-                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); } }}
-                        >
-                          <p className="font-['Outfit',sans-serif] leading-none text-[17px] text-white tracking-[0.16px] whitespace-nowrap pt-0.5">
-                            View More
-                          </p>
-                          <div className="flex items-center justify-center" aria-hidden="true">
-                            <div className="flex items-center justify-center h-[26px] w-[26px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="white"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <path d="M7 17L17 7M7 7h10v10" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <GcoFeatureTagsRow />
-                  )
-                ) : (
+                {activeData.id !== "gco" && (
                   <p className="font-['Inter',sans-serif] text-[16px] md:text-[18px] text-[rgba(0,0,0,0.7)] leading-relaxed md:pr-8">
                     {activeData.description}
                   </p>
@@ -111,35 +70,33 @@ function GcoFeatureBadge({
         </AnimatePresence>
       </div>
 
-      {activeData.id !== "gco" && (
-        <div
-          className="flex items-center justify-between bg-[#161616] h-[54px] pl-7 pr-6 rounded-full w-[174px] cursor-pointer group hover:bg-[#222] transition-colors"
-          role="button"
-          tabIndex={0}
-          aria-label="View more details"
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); /* future: navigate or expand */ } }}
-        >
-          <p className="font-['Outfit',sans-serif] leading-none text-[17px] text-white tracking-[0.16px] whitespace-nowrap pt-0.5">
-            View More
-          </p>
-          <div className="flex items-center justify-center" aria-hidden="true">
-            <div className="flex items-center justify-center h-[26px] w-[26px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M7 17L17 7M7 7h10v10" />
-              </svg>
-            </div>
+      <div
+        className="flex items-center justify-between bg-[#161616] h-[54px] pl-7 pr-6 rounded-full w-[174px] cursor-pointer group hover:bg-[#222] transition-colors"
+        role="button"
+        tabIndex={0}
+        aria-label="View more details"
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); /* future: navigate or expand */ } }}
+      >
+        <p className="font-['Outfit',sans-serif] leading-none text-[17px] text-white tracking-[0.16px] whitespace-nowrap pt-0.5">
+          View More
+        </p>
+        <div className="flex items-center justify-center" aria-hidden="true">
+          <div className="flex items-center justify-center h-[26px] w-[26px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M7 17L17 7M7 7h10v10" />
+            </svg>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -464,7 +421,7 @@ function EcosystemCluster({
         isDark={true}
         gradientId="gcoGrad"
         title="Kronos"
-        description="Focused on specialized capabilities and advanced skill validation within the Ateion ecosystem."
+        description="A system that shows your real abilities, not just certificates."
         titleSize="20px"
         onClick={() => onBubbleClick("kronos")}
       />
@@ -477,7 +434,7 @@ function EcosystemCluster({
         isDark={true}
         gradientId="ateionGrad"
         title="Vouch"
-        description="A decentralized verification protocol for authenticating learner capabilities and achievements."
+        description="A way to get trusted proof of what you’ve accomplished."
         titleSize="22px"
         onClick={() => onBubbleClick("vouch")}
       />
@@ -538,7 +495,7 @@ export default function EcosystemSection() {
       number: "03",
       title: "Kronos",
       description:
-        "Focused on specialized capabilities and advanced skill validation within the Ateion ecosystem.",
+        "A system that shows your real abilities, not just certificates.",
       hasTags: false,
     },
     vouch: {
@@ -546,7 +503,7 @@ export default function EcosystemSection() {
       number: "04",
       title: "Vouch",
       description:
-        "A decentralized verification protocol for authenticating learner capabilities and achievements.",
+        "A way to get trusted proof of what you’ve accomplished.",
       hasTags: false,
     },
     workshops: {
@@ -636,7 +593,7 @@ export default function EcosystemSection() {
       >
         <div className="flex justify-center">
           <div
-            className="flex flex-row items-start gap-[48px] lg:gap-[64px] px-8 lg:px-16"
+            className="flex flex-row items-center gap-[48px] lg:gap-[64px] px-8 lg:px-16"
             style={{
               width: DESKTOP_CONTENT_WIDTH,
               maxWidth: "100%",
